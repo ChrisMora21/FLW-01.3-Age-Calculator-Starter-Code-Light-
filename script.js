@@ -4,7 +4,7 @@ let ageButton = document.querySelector(".age-button")
 let inputName = document.querySelector(".name");
 
 // task 2: declare a variable called inputYear and assign it to the class called "year" using querySelector.
-let inputName = document.querySelector(".year");
+let inputYear = document.querySelector(".year");
 
 // task 3: declare a variable called message and assign it to the class called "message" using querySelector.
 let message = document.querySelector(".message");
@@ -32,15 +32,17 @@ let age;
 ageButton.onclick = function() {
 
   // task 8: assign a value to userName. Set it equal to the value of inputName.
- userName = inputName;
+ userName = inputName.value;
 
   // task 9: assign a value to userYear. Set it equal to the value of inputYear. This is a number! Be sure to use the Number function on it!
- userYear = inputYear;
+ userYear = Number(inputYear.value);
 
   // task 10: assign a value to age. We need to calculate this value by subtracting the userYear from currentYear
- age = currentYear-userYear;
+ age = Number(currentYear-userYear);
 
   // task 11: using .innerHTML, update message to display the userName and age. Use string interpolation for this to have a personalized message like: ________, it looks like you are (turning) _____ years old!
-
+let message = document.querySelector(".message") ;
+let personalizedMessage = `${userName}, it looks like you are turning ${age} years old!`;
+  message.innerHTML= personalizedMessage;
   
 }
